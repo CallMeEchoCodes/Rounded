@@ -1,0 +1,9 @@
+Package: dev.callmeecho.rounded
+Name: Rounded
+Version: 1.0.0
+Architecture: iphoneos-arm
+Description: Rounded screen corners!
+Maintainer: CallMeEcho
+Author: CallMeEcho
+Section: Tweaks
+Depends: mobilesubstrate
