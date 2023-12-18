@@ -7,12 +7,20 @@
 }
 %end
 
+%hook CCUIContentModuleContentContainerView
+- (void)layoutSubviews {
+	self.clipsToBounds = YES;
+	self._continuousCornerRadius = ccCornerRadius;
+}
+%end
+
 // Preferences
 static void loadPreferences() {
 	NSUserDefaults *preferences = [[NSUserDefaults alloc] initWithSuiteName:@"dev.callmeecho.rounded.preferences"];
 	if (!preferences) { return; }
 
 	screenCornerRadius = [[preferences objectForKey:@"screenCornerRadius"] integerValue];
+	ccCornerRadius = [[preferences objectForKey:@"ccCornerRadius"] integerValue];
 }
 
 %ctor {
